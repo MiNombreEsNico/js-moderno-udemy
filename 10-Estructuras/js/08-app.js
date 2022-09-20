@@ -1,0 +1,1 @@
+const pendientes = ['Tarea', 'Comer', 'Proyecto', 'JavaScript'];
