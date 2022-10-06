@@ -51,8 +51,8 @@ form {
     height: 100%;
     position: absolute;
     left: 0;
-    top: 0; 
-    animation: sk-chase-dot 2.0s infinite ease-in-out both; 
+    top: 0;
+    animation: sk-chase-dot 2.0s infinite ease-in-out both;
   }
   
   .sk-chase-dot:before {
