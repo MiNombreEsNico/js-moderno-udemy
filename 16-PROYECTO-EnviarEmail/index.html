@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Envio de Emails</title>
     <link rel="stylesheet" href="dist/app.css">
+    <link rel="stylesheet" href="dist/spinner.css">
 </head>
 <body class="min-h-screen bg-slate-300">
     <div class="max-w-3xl mx-auto p-10">
@@ -15,6 +16,11 @@
                 <div class="flex flex-col space-y-2">
                     <label for="email" class="font-regular font-medium">Email:</label>
                     <input id="email" type="email" name="email" placeholder="Email Destino, ej: mkt@empresa.com" class="border border-gray-300 px-3 py-2 rounded-lg"  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <label for="cc" class="font-regular font-medium">CC:</label>
+                    <input id="cc" type="email" name="email" placeholder="Otro email, ej: mkt2@empresa.com" class="border border-gray-300 px-3 py-2 rounded-lg"  />
                 </div>
 
                 <div class="flex flex-col space-y-2">
@@ -36,7 +42,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                         </svg>
-                        Enviar
+                        Enviar 
                     </button>
 
                     <button 
@@ -50,6 +56,19 @@
                     </button>
                 </div>           
             </form>
+            <div id="spinner" class="hidden justify-center mt-10">
+                <!-- <div class="sk-chase">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                </div> -->
+
+                  <span class="loader"></span>
+            </div>
+            
         </div>
     </div>
 
