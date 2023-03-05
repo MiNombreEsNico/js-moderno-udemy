@@ -108,11 +108,23 @@ function llenarSelect() {
 
 // Función que filtra en base a la búsqueda
 function filtrarAuto() {
-    const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo).filter(filtrarPuertas).filter(filtrarTransmision);
-    // console.log(resultado);
-    mostrarAutos(resultado);
-}
+    const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo).filter(filtrarPuertas).filter(filtrarTransmision).filter(filtrarColor);
+    console.log(resultado);
 
+    if(resultado.length) {
+        mostrarAutos(resultado);
+    } else {
+        noResultado();
+    }
+}
+function noResultado() {
+
+    limpiarHTML();
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta', 'error');
+    noResultado.textContent = 'No hay resultados. Intenta con otros términos de busqueda';
+    resultado.appendChild(noResultado);
+}
 function filtrarMarca(auto) {
     const { marca } = datosBusqueda;
     if(datosBusqueda.marca) {
@@ -152,6 +164,13 @@ function filtrarTransmision(auto) {
     const { transmision } = datosBusqueda;
     if(transmision) {
         return auto.transmision === transmision;
+    }
+    return auto;
+}
+function filtrarColor(auto) {
+    const { color } = datosBusqueda;
+    if(color) {
+        return auto.color === color;
     }
     return auto;
 }
