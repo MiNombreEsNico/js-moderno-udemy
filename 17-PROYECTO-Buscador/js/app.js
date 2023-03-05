@@ -25,7 +25,7 @@ const datosBusqueda = {
 
 // Eventos
 document.addEventListener('DOMContentLoaded', () => {
-    mostrarAutos();
+    mostrarAutos(autos);
 
     // Muestra los automóviles al cargar
 
@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Event listener para los select de búsqueda
 marca.addEventListener('change', e => {
     datosBusqueda.marca = e.target.value;
-    filtrarAuto(autos);
+    filtrarAuto();
 });
 
 year.addEventListener('change', e => {
     datosBusqueda.year = parseInt(e.target.value);
-    filtrarAuto(autos);
+    filtrarAuto();
 });
 
 minimo.addEventListener('change', e => {
